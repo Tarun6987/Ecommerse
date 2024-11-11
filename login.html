@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-page</title>
+    <script src="https://kit.fontawesome.com/1e086755ed.js"crossorigin="anonymous"></script>
+    <link href="Ecommerce.css"rel='stylesheet'>
+<style>
+    div form{
+        transform:translateX(580px);
+    }
+    [value='Login']{
+        padding:8px 15px;
+        border-radius:5px; 
+        background-color:rgb(48, 46, 46);
+        color:white;
+        border: none;
+    }
+    form input{
+        border-radius:5px;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+</style>
+</head>
+<body>
+<div>
+    <header>
+        <div>
+            <h2>Ecommerce</h2>
+        </div>
+        <div class='nav-links'>
+            <a href="home-page.html">Home</a>
+            <a href="Product-page.html">Products</a>
+            <a href="About.html">About</a>
+            <a href="Contact-page.html">Contact</a>
+        </div>
+        <div class="btn-icon-header">
+            <span class="icon-header">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <a href='login.html'class="btn-header">Login</a>
+            </span>
+            <span class="icon-header">
+                <i class="fas fa-user-plus"></i>
+                <a href='Register.html'class="btn-header">Register</a>
+            </span>            
+            <span class="icon-header">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.html"><button onclick='cart()'class="btn-header">Cart (<span id="cart-value">0</span>)</button></a> 
+            </span>           
+        </div> 
+    </header>
+    <h1 align="center"style="padding-top:15px;">Login</h1>
+    <hr style="margin:5px">
+    <div style="margin-top:30px;">
+        <form style="font-size:1.3em;">
+            <label>Email address</label><br>
+            <input type="email"placeholder='name@example.com'style='height:30px;width:350px;border:2px solid lightgray;'><br>
+            <label>Password</label><br>
+            <input type="text"placeholder='Password'style='height:30px;width:350px;border:2px solid lightgray;'><br>
+            <p style="font-size:0.8em;">New Here ? <a href="Register.html"style='color:cyan;text-decoration:underline'> Register</a></p>
+            <input type="button"value='Login'style='margin-left:150px'>
+        </form>
+    </div>
+    <br><br>
+    <p align="center"style='font-size:1.3em'>Made with <span style='color:red;'>&#x2665</span> By <u>Tarun Mudhiraj</u></p>
+</div>
+
+</body>
+</html>

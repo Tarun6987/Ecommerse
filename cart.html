@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://kit.fontawesome.com/1e086755ed.js"crossorigin="anonymous"></script>
+    <link href="Ecommerce.css"rel='stylesheet'>
+</head>
+<body>
+<div>
+    <header>
+        <div>
+            <h2>Ecommerce</h2>
+        </div>
+        <div class='nav-links'>
+            <a href="home-page.html">Home</a>
+            <a href="Product-page.html">Products</a>
+            <a href="About.html">About</a>
+            <a href="Contact-page.html">Contact</a>
+        </div>
+        <div class="btn-icon-header">
+            <span class="icon-header">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <a href='login.html'class="btn-header">Login</a>
+            </span>
+            <span class="icon-header">
+                <i class="fas fa-user-plus"></i>
+                <a href='Register.html'class="btn-header">Register</a>
+            </span>            
+            <span class="icon-header">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.html"><button onclick='cart()'class="btn-header">Cart (<span id="cart-value">0</span>)</button></a> 
+            </span>           
+        </div> 
+    </header>   
+    <div id="cart">
+        <h1 align="center"style='font-size:2.5em'>Cart</h1>
+        <hr width="80%">
+        <div align="center" style="background-color:lightgray;height:300px;width:80%;margin:30px 150px;align-content:center;">
+        <p style="font-size:2.5em;margin-top:-20px;margin-bottom:30px;">You Cart is Empty</p> 
+        <a href="home-page.html"><button id="cart-continue-btn"style='padding:8px 15px;border-radius:5px'><strong>&#8592</strong> Continue Shopping</button></a>  
+        </div>
+        <p align="center"style='font-size:1.3em'>Made with <span style='color:red;'>&#x2665</span> By <u>Tarun Mudhiraj</u></p>
+    </div>
+</div>
+</body>
+</html>

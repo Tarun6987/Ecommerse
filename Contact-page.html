@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-page</title>
+    <script src="https://kit.fontawesome.com/1e086755ed.js"crossorigin="anonymous"></script>
+    <link href="Ecommerce.css"rel='stylesheet'>
+    <style>
+        div form{
+            transform:translateX(610px);
+        }
+        [value='Send']{
+            padding:8px 15px;
+            border-radius:5px; 
+            background-color:rgb(48, 46, 46);
+            color:white;
+            border: none;
+        }
+        form input{
+            border-radius:5px;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <header>
+        <div>
+
+            <h2>Ecommerce</h2>
+        </div>
+        <div class='nav-links'>
+            <a href="home-page.html">Home</a>
+            <a href="Product-page.html">Products</a>
+            <a href="About.html">About</a>
+            <a href="Contact-page.html">Contact</a>
+        </div>
+        <div class="btn-icon-header">
+            <span class="icon-header">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <a href='login.html'class="btn-header">Login</a>
+            </span>
+            <span class="icon-header">
+                <i class="fas fa-user-plus"></i>
+                <a href='Register.html'class="btn-header">Register</a>
+            </span>            
+            <span class="icon-header">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.html"><button onclick='cart()'class="btn-header">Cart (<span id="cart-value">0</span>)</button></a> 
+            </span>           
+        </div> 
+    </header>
+    <h1 align="center"style="padding-top:15px;">Contact Us</h1>
+    <hr style="margin:5px">
+    <div style="margin-top:30px;">
+        <form style="font-size:1.3em;">
+            <label>Name</label><br>
+            <input type="text"placeholder='Enter your name'style='height:30px;width:280px;border:2px solid lightgray;'><br>
+            <label>Email</label><br>
+            <input type="email"placeholder='name@example.com'style='height:30px;width:280px;border:2px solid lightgray;'><br>
+            <label>Message</label><br>
+            <textarea style='height:170px;width:280px;border-radius:5px;margin-top:10px;margin-bottom:10px;border:2px solid lightgray'>Enter your Message</textarea><br>
+            <input type="button"value='Send'style='margin-left:110px'>
+        </form>
+    </div>
+    <p align="center"style='font-size:1.3em'>Made with <span style='color:red;'>&#x2665</span> By <u>Tarun Mudhiraj</u></p>
+</div>
