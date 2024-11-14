@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product-page</title>
+    <title>Home-page</title>
     <script src="https://kit.fontawesome.com/1e086755ed.js"crossorigin="anonymous"></script>
     <link href="Ecommerce.css"rel='stylesheet'>
+    <script src="cart.js"></script>
     <style>
         .banner-img{
-        height:600px;
-        width:1500px;
-        color:white;
-        margin:0px 8px;
-        background-image:url('./images/main-banner.jpg');
-        align-content: center;
+            height:600px;
+            width:1500px;
+            color:white;
+            margin:0px 8px;
+            background-image:url('../images/main-banner.jpg');
+            align-content: center;
         }
         .latest-products-btn{
             background-color:white;
@@ -38,80 +39,46 @@
             margin-bottom:50px;
             padding-top:10px;
         }
+        /* #card-items:nth-child(19){
+           margin-left:300px;   
+        } */
     </style>
 </head>
 <body>
-<div>
-    <header>
-        <div>
-            <h2>Ecommerce</h2>
-        </div>
-        <div class='nav-links'>
-            <a href="home-page.html">Home</a>
-            <a href="Product-page.html">Products</a>
-            <a href="About.html">About</a>
-            <a href="Contact-page.html">Contact</a>
-        </div>
-        <div class="btn-icon-header">
-            <span class="icon-header">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                <a href='login.html'class="btn-header">Login</a>
-            </span>
-            <span class="icon-header">
-                <i class="fas fa-user-plus"></i>
-                <a href='Register.html'class="btn-header">Register</a>
-            </span>            
-            <span class="icon-header">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <a href="cart.html"><button onclick='cart()'class="btn-header">Cart (<span id="cart-value">0</span>)</button></a> 
-            </span>           
-        </div> 
-    </header>
-    <h1 align='center'>Latest Products</h1>
-    <hr><br>
-    <div align='center'>
-        <button onclick="filter('all')"class="latest-products-btn">All</button>
-        <button onclick="filter('men\'s clothing')"class="latest-products-btn">Men's Clothing</button>
-        <button onclick="filter('women\'s clothing')"class="latest-products-btn">Women's Clothing</button>
-        <button onclick="filter('jewelery')"class="latest-products-btn">Jewellery</button>
-        <button onclick="filter('electronics')"class="latest-products-btn">Electronics</button>
+<header>
+    <div>
+        <h2>Ecommerce</h2>
     </div>
-    <div id="card-items">
+    <div class='nav-links'>
+        <a href="home-page.html">Home</a>
+        <a href="Product-page.html">Products</a>
+        <a href="About.html">About</a>
+        <a href="Contact-page.html">Contact</a>
     </div>
+    <div class="btn-icon-header">
+        <span class="icon-header">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <a href='login.html' class="btn-header">Login</a>
+        </span>
+        <span class="icon-header">
+            <i class="fas fa-user-plus"></i>
+            <a href='Register.html' class="btn-header">Register</a>
+        </span>            
+        <span class="icon-header">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <a href="cart.html"><button class="btn-header">Cart (<span id="cart-value">0</span>)</button></a> 
+        </span>           
+    </div> 
+</header>
+<h1 align='center'>Latest Products</h1>
+<hr><br>
+<div align='center'>
+    <button onclick="filter('all')"class="latest-products-btn">All</button>
+    <button onclick="filter('men\'s clothing')"class="latest-products-btn">Men's Clothing</button>
+    <button onclick="filter('women\'s clothing')"class="latest-products-btn">Women's Clothing</button>
+    <button onclick="filter('jewelery')"class="latest-products-btn">Jewellery</button>
+    <button onclick="filter('electronics')"class="latest-products-btn">Electronics</button>
 </div>
 <div id="card-items"></div>
-<script>
-    let allData = []; // Global variable to store fetched data
-    fetch('https://fakestoreapi.com/products')
-    .then(response => response.json())
-    .then(data => {
-        allData = data; // Store data in the global variable
-        displayCards(allData); // Display all products initially
-    })
-    .catch(error => console.error('Error fetching products:', error));
-    // Function to render cards based on filtered data
-    function displayCards(cards) {
-        let div = document.getElementById('card-items');
-        div.innerHTML = ''; // Clear previous content
-        cards.forEach(card => {
-            div.innerHTML += `
-                <center><div id='cardDiv'>
-                    <img src='${card.image}' width='200px' height='250'>
-                    <p>${card.title.slice(0,11)}${card.title.length > 11 ? '...' : ''}</p>
-                    <p>${card.description.slice(0, 100)}${card.description.length > 100 ? '...' : ''}</p>
-                    <hr>
-                    <p>$${card.price}</p>
-                    <hr>
-                    <button style='background-color:black;color:white;border-radius:5px;padding:5px 10px'>Details</button>
-                    <button onclick='addToCart()' style='background-color:black;color:white;border-radius:5px;padding:5px 10px'>Add to Cart</button>
-                </div></center>`;
-        });
-    }
-    function filter(category) {
-        const filteredData = allData.filter(card => category === 'all' || card.category === category);
-        displayCards(filteredData);
-    }
-</script>
-<p align="center"style='font-size:1.3em'>Made with <span style='color:red;'>&#x2665</span> By <u>Tarun Mudhiraj</u></p>
 </body>
 </html>

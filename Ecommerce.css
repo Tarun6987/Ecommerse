@@ -60,3 +60,39 @@ div a{
     grid-template-columns:auto auto auto auto;
     justify-items: center;
 }
+#cart{
+    padding-top:30px;
+}
+.cart-main{
+    display:grid;
+    grid-template-columns:auto auto;
+    margin:70px 70px 70px 60px;
+}
+#cart-flex{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    justify-items: center;
+    height:150px;
+    /* width:700px; */
+}
+#cart-items{
+    border:1px solid black;
+    overflow-y:scroll;
+    margin-left:50px;
+    height:600px;
+    width:100%;
+}
+#checkout{
+    border:1px solid black;
+    transform:translateX(100px);
+    /* margin-left:200px; */
+    padding:10px 40px;
+    height:250px;
+    width:350px;
+}
+#checkout button{
+    background-color: black;
+    color: white;
+    padding:8px 10px;
+    width:350px
+}
