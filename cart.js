@@ -60,7 +60,6 @@ function loadCart() {
         // Hide empty cart message and show cart items
         emptyCartDiv.style.display = 'none';
         checkout.style.display = 'block';
-
         // Display each item in the cart
         let h1 = document.createElement('h1');
         h1.textContent = 'Item List';
