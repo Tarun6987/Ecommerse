@@ -87,12 +87,78 @@ div a{
     transform:translateX(100px);
     /* margin-left:200px; */
     padding:10px 40px;
-    height:250px;
+    height:350px;
     width:350px;
 }
 #checkout button{
     background-color: black;
     color: white;
     padding:8px 10px;
-    width:350px
+    width:250px
+}
+.banner-img{
+    height:600px;
+    width:1500px;
+    color:white;
+    margin:0px 8px;
+    background-image:url('./main-banner.jpg');
+    align-content: center;
+}
+.latest-products-btn{
+    background-color:white;
+    border-radius:5px;
+    padding:5px 10px;
+    margin-right:10px;
+}
+.latest-products-btn:hover{
+    background-color:black;
+    color:white;
+}
+#card-items{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    margin:50px 20px 0px 20px;
+}
+#cardDiv{
+    border:1px solid lightgray;
+    border-radius:8px;
+    height:500px;
+    width:400px;
+    margin-bottom:50px;
+    padding-top:10px;
+}
+/* #card-items:nth-child(19){
+   margin-left:300px;   
+} */
+div form{
+    transform:translateX(580px);
+}
+[value='Login']{
+    padding:8px 15px;
+    border-radius:5px; 
+    background-color:rgb(48, 46, 46);
+    color:white;
+    border: none;
+}
+form input{
+    border-radius:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+div form{
+    transform:translateX(580px);
+}
+[value='Register']{
+    padding:8px 15px;
+    border-radius:5px; 
+    background-color:rgb(48, 46, 46);
+    color:white;
+    border: none;
+}
+[value='Send']{
+    padding:8px 15px;
+    border-radius:5px; 
+    background-color:rgb(48, 46, 46);
+    color:white;
+    border: none;
 }

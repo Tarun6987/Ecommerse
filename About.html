@@ -4,63 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About-page</title>
-    <script src="https://kit.fontawesome.com/1e086755ed.js"crossorigin="anonymous"></script>
-    <link href="Ecommerce.css"rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1e086755ed.js" crossorigin="anonymous"></script>
+    <style>
+        .card-img-top {
+        height: 300px;
+        width:300px;
+        padding:20px 40px 0px 50px;
+        /* object-fit: cover; */
+        }
+    </style>
 </head>
 <body>
-<div>
-    <header>
-        <div>
-            <h2>Ecommerce</h2>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <h2 class="mb-0">Ecommerce</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="home-page.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="Product-page.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="Contact-page.html">Contact</a></li>
+                </ul>
+                <div class="d-flex gap-3">
+                    <a href="login.html" class="btn btn-outline-dark btn-sm">
+                        <i class="fa-solid fa-right-to-bracket me-2"></i> Login
+                    </a>
+                    <a href="Register.html" class="btn btn-outline-dark btn-sm">
+                        <i class="fas fa-user-plus me-2"></i> Register
+                    </a>
+                    <a href="cart.html" class="btn btn-outline-dark btn-sm">
+                        <i class="fa-solid fa-cart-shopping me-2"></i> Cart (<span id="cart-value">0</span>)
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class='nav-links'>
-            <a href="home-page.html">Home</a>
-            <a href="Product-page.html">Products</a>
-            <a href="About.html">About</a>
-            <a href="Contact-page.html">Contact</a>
-        </div>
-        <div class="btn-icon-header">
-            <span class="icon-header">
-                <i class="fa-solid fa-right-to-bracket"></i>
-                <a href='login.html'class="btn-header">Login</a>
-            </span>
-            <span class="icon-header">
-                <i class="fas fa-user-plus"></i>
-                <a href='Register.html'class="btn-header">Register</a>
-            </span>            
-            <span class="icon-header">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <a href="cart.html"><button onclick='cart()'class="btn-header">Cart (<span id="cart-value">0</span>)</button></a> 
-            </span>           
-        </div> 
-    </header>
-    <h1 align="center">About Us</h1>
-    <hr align="center">
-    <p align="center"style='font-size:1.2em;padding:0 20px;word-spacing:5px'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa accusamus, iusto, mollitia voluptatum voluptate soluta nulla ex tempora laboriosam officiis modi sapiente quo ipsam velit! Asperiores sapiente similique ipsum eius?
-    Expedita id, in consectetur dolore ullam cupiditate perspiciatis sequi sunt dignissimos delectus fugiat illum libero! Fuga omnis numquam neque, tempora quae animi error rem exercitationem laborum mollitia explicabo fugit itaque!
-    Iste quo assumenda nobis eos. Reprehenderit ipsum architecto dolore quam quisquam alias voluptate saepe magnam veritatis unde. Dolor tempore obcaecati accusamus at maiores minus, veniam, eligendi cupiditate iure vero quisquam.
-    Fuga et reprehenderit voluptatum eius exercitationem perferendis ratione nihil quis. Ducimus iusto explicabo aliquid. Dignissimos fugiat, assumenda necessitatibus blanditiis ab facilis! Facere eos, quisquam reprehenderit quaerat tempore voluptate aliquid ut.
-    Veniam nemo, inventore laboriosam exercitationem et maxime perferendis voluptatum quo nobis aut quis nisi illum sequi dolorem quidem labore aliquam autem assumenda sit optio saepe perspiciatis ea! Quidem, natus corrupti.</p>
-    <h1 align="center">Our Products</h1>
-    <div class="about-img">
-        <div style="border:1px solid black;padding:10px 30px 10px 30px">
-            <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"height='250px'width='200px'>
-            <h3 align="center">Mens Clothing</h3>
-        </div>
-        <div style="border:1px solid black;padding:10px 30px 10px 30px">
-            <img src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"height='250px'width='200px'>
-            <h3 align="center">Womens Clothing</h3>                       
-        </div>
-        <div style="border:1px solid black;padding:10px 30px 10px 30px">
-            <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"height='250px'width='200px'>
-            <h3 align="center">Jewelery</h3>
-        </div>
-        <div style="border:1px solid black;padding:10px 30px 10px 30px">
-            <img src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"height='250px'width='200px'>
-            <h3 align="center">Electronics</h3>
+    </nav>
+    <div class="container my-5">
+        <h1 class="text-center">About Us</h1>
+        <hr>
+        <p class="text-center fs-5 px-3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa accusamus, iusto, mollitia voluptatum voluptate soluta nulla ex tempora laboriosam officiis modi sapiente quo ipsam velit! Asperiores sapiente similique ipsum eius?
+            Expedita id, in consectetur dolore ullam cupiditate perspiciatis sequi sunt dignissimos delectus fugiat illum libero! Fuga omnis numquam neque, tempora quae animi error rem exercitationem laborum mollitia explicabo fugit itaque!
+        </p>
+    </div>
+    <div class="container my-5">
+        <h1 class="text-center">Our Products</h1>
+        <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+                <div class="card border">
+                    <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" 
+                         class="card-img-top img-fluid" 
+                         alt="Mens Clothing">
+                    <div class="card-body">
+                        <h5 class="card-title">Mens Clothing</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card border">
+                    <img src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg" 
+                         class="card-img-top img-fluid" 
+                         alt="Womens Clothing">
+                    <div class="card-body">
+                        <h5 class="card-title">Womens Clothing</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card border">
+                    <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" 
+                         class="card-img-top img-fluid" 
+                         alt="Jewelry">
+                    <div class="card-body">
+                        <h5 class="card-title">Jewellery</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card border">
+                    <img src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg" 
+                         class="card-img-top img-fluid" 
+                         alt="Electronics">
+                    <div class="card-body">
+                        <h5 class="card-title">Electronics</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <p align="center"style='font-size:1.3em'>Made with <span style='color:red;'>&#x2665</span> By <u>Tarun Mudhiraj</u></p>
-</div>
+    <footer class="text-center py-4">
+        <p class="mb-0 fs-5">Made with <span style="color:red;">&#x2665;</span> By <u>Tarun Mudhiraj</u></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
