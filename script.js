@@ -11,7 +11,7 @@ function displayCards(cards) {
     div.innerHTML = ''; 
     cards.forEach(card => {
         div.innerHTML +=`
-            <center><div id='cardDiv' style='border:1px solid gray;border-radius:8px'>
+            <center><div style='border:1px solid gray;border-radius:8px'>
                 <img src='${card.image}' width='200px' height='250'>
                 <p>${card.title.slice(0,11)}${card.title.length > 11 ? '...' : ''}</p>
                 <p>${card.description.slice(0, 100)}${card.description.length > 100 ? '...' : ''}</p>
@@ -37,14 +37,6 @@ function updateCartCount() {
     const cartValue = document.getElementById('cart-value');
     cartValue.textContent = cart.length; 
 }
-// function updateCartCount() {
-//     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-//     // Calculate the total quantity of items in the cart
-//     const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
-//     // Update the cart count display
-//     const cartValue = document.getElementById('cart-value');
-//     cartValue.textContent = totalQuantity; 
-// }
 function loadCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     const checkout = document.getElementById('checkout');
