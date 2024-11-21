@@ -23,8 +23,5 @@ body {
     padding:20px 40px 0px 50px;
 }
 .nav-link.active {
-    color: black;
-}
-.bg-dark-gray{
-    background-color:lightgrey;
+    color: black !important;
 }

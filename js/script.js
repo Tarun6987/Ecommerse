@@ -1,4 +1,4 @@
-let allData = [];  
+let allData = [];
 fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
     .then(data => {
@@ -8,12 +8,12 @@ fetch('https://fakestoreapi.com/products')
     .catch(error => console.error('Error fetching products:', error));
 function displayCards(cards) {
     let div = document.getElementById('card-items');
-    div.innerHTML = ''; 
+    div.innerHTML = '';
     cards.forEach(card => {
-        div.innerHTML +=`
+        div.innerHTML += `
             <center><div style='border:1px solid gray;border-radius:8px'>
                 <img src='${card.image}' width='200px' height='250'class="mb-3 pt-3">
-                <p>${card.title.slice(0,11)}${card.title.length > 11 ? '...' : ''}</p>
+                <p>${card.title.slice(0, 11)}${card.title.length > 11 ? '...' : ''}</p>
                 <p>${card.description.slice(0, 100)}${card.description.length > 100 ? '...' : ''}</p>
                 <hr>
                 <p>$${card.price}</p>
@@ -35,7 +35,7 @@ function addToCart(id, title, price, image) {
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartValue = document.getElementById('cart-value');
-    cartValue.textContent = cart.length; 
+    cartValue.textContent = cart.length;
 }
 function loadCart() {
     const cartItemsContainer = document.getElementById('cart-items');
@@ -46,9 +46,9 @@ function loadCart() {
     cartItemsContainer.innerHTML = "";
     let totalPrice = 0;
     if (cart.length === 0) {
-        emptyCartDiv.style.display = 'block'; 
-        checkout.style.display = 'none'; 
-        cartValue.textContent = 0; 
+        emptyCartDiv.style.display = 'block';
+        checkout.style.display = 'none';
+        cartValue.textContent = 0;
     } else {
         emptyCartDiv.style.display = 'none';
         checkout.style.display = 'block';
@@ -135,7 +135,7 @@ function changeQuantity(id, change) {
         }
         localStorage.setItem('cart', JSON.stringify(cart));
         loadCart();
-        updateCartCount(); 
+        updateCartCount();
     }
 }
 function filter(category) {
@@ -144,34 +144,33 @@ function filter(category) {
 }
 function clearCart() {
     localStorage.clear();
-    loadCart(); 
-    updateCartCount(); 
+    loadCart();
+    updateCartCount();
+}
+function setActiveLink(linkId) {
+    document.querySelectorAll('.nav-link').forEach(item => {
+        item.classList.remove('active', 'text-dark');
+        item.classList.add('text-secondary');
+    });
+    const activeLink = document.getElementById(linkId);
+    if (activeLink) {
+        activeLink.classList.add('active', 'text-dark');
+        activeLink.classList.remove('text-secondary');
+        localStorage.setItem('activeLink', linkId);
+    }
 }
 document.addEventListener('DOMContentLoaded', () => {
+    const savedLinkId = localStorage.getItem('activeLink');
+    if (savedLinkId) {
+        setActiveLink(savedLinkId);
+    }
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function () {
+            setActiveLink(this.id);
+        });
+    });
     updateCartCount();
     if (document.getElementById('cart-items')) {
         loadCart();
     }
 });
-  // Function to handle active link styling
-  function setActiveLink(linkId) {
-    // Remove active class from all links
-    document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active', 'text-dark'));
-    // Add active class to the clicked link
-    const activeLink = document.getElementById(linkId);
-    if (activeLink) {
-        activeLink.classList.add('active', 'text-dark');
-        localStorage.setItem('activeLink', linkId); // Save the active link ID to localStorage
-    }
-}
-// Add event listener to all nav-link elements
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function () {
-        setActiveLink(this.id);
-    });
-});
-// On page load, retrieve and set the active link
-const savedLinkId = localStorage.getItem('activeLink');
-if (savedLinkId) {
-    setActiveLink(savedLinkId);
-}
