@@ -21,10 +21,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="Product-page.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="About.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark" href="Contact-page.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-lightgray active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-lightgray" href="Product-page.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link text-lightgray" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-lightgray" href="Contact-page.html">Contact</a></li>
                 </ul>
                 <div class="d-flex gap-3">
                     <a href="login.html" class="btn btn-outline-dark btn-sm">
@@ -40,12 +40,13 @@
             </div>
         </div>
     </nav> 
-    <div id="cart" class="container my-5">
-        <hr class="w-75 mx-auto">
-        <div class="d-flex flex-column justify-content-center align-items-center bg-light p-4 rounded shadow" style="height: 350px;">
-            <p class="fs-2 mb-4 text-center">Your Cart is Empty</p>
+    <div id="cart" class="container">
+        <h1 class="text-center mt-5">Cart</h1>
+        <hr class="w-100 mx-auto">
+        <div class="d-flex flex-column justify-content-center align-items-center p-4 bg-light rounded" style="height: 350px;">
+            <p class="fs-1 mb-4 text-center">Your Cart is Empty</p>
             <a href="index.html" class="text-decoration-none">
-                <button id="cart-continue-btn" class="btn btn-dark px-4 py-2">
+                <button id="cart-continue-btn" class="btn btn-outline-dark px-4 py-2">
                     <i class="fa-solid fa-left-long me-2"></i> Continue Shopping
                 </button>
             </a>
