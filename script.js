@@ -12,14 +12,14 @@ function displayCards(cards) {
     cards.forEach(card => {
         div.innerHTML +=`
             <center><div style='border:1px solid gray;border-radius:8px'>
-                <img src='${card.image}' width='200px' height='250'>
+                <img src='${card.image}' width='200px' height='250'class="mb-3">
                 <p>${card.title.slice(0,11)}${card.title.length > 11 ? '...' : ''}</p>
                 <p>${card.description.slice(0, 100)}${card.description.length > 100 ? '...' : ''}</p>
                 <hr>
                 <p>$${card.price}</p>
                 <hr>
-                <button style='background-color:black;color:white;border-radius:5px;padding:5px 10px'>Details</button>
-                <button onclick="addToCart(${card.id}, '${card.title}', ${card.price}, '${card.image}')" style="background-color:black;color:white;border-radius:5px;padding:5px 10px">Add to Cart</button>
+                <button class="btn btn-dark mb-3">Details</button>
+                <button class="btn btn-dark mb-3"onclick="addToCart(${card.id}, '${card.title}', ${card.price}, '${card.image}')">Add to Cart</button>
             </div></center>`;
     });
 }
@@ -153,3 +153,25 @@ document.addEventListener('DOMContentLoaded', () => {
         loadCart();
     }
 });
+  // Function to handle active link styling
+  function setActiveLink(linkId) {
+    // Remove active class from all links
+    document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active', 'text-dark'));
+    // Add active class to the clicked link
+    const activeLink = document.getElementById(linkId);
+    if (activeLink) {
+        activeLink.classList.add('active', 'text-dark');
+        localStorage.setItem('activeLink', linkId); // Save the active link ID to localStorage
+    }
+}
+// Add event listener to all nav-link elements
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+        setActiveLink(this.id);
+    });
+});
+// On page load, retrieve and set the active link
+const savedLinkId = localStorage.getItem('activeLink');
+if (savedLinkId) {
+    setActiveLink(savedLinkId);
+}
