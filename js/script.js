@@ -11,7 +11,7 @@ function displayCards(cards) {
     div.innerHTML = '';
     cards.forEach(card => {
         div.innerHTML += `
-            <center><div style='border:1px solid gray;border-radius:8px'>
+            <center><div class='cardcenter' style='border:1px solid gray;border-radius:8px'>
                 <img src='${card.image}' width='200px' height='250'class="mb-3 pt-3">
                 <p>${card.title.slice(0, 11)}${card.title.length > 11 ? '...' : ''}</p>
                 <p>${card.description.slice(0, 100)}${card.description.length > 100 ? '...' : ''}</p>
@@ -42,20 +42,26 @@ function loadCart() {
     const checkout = document.getElementById('checkout');
     const emptyCartDiv = document.getElementById('cart');
     const cartValue = document.getElementById('cart-value');
+    const cartcheckout = document.getElementById('cart-checkout');
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartItemsContainer.innerHTML = "";
     let totalPrice = 0;
     if (cart.length === 0) {
         emptyCartDiv.style.display = 'block';
+        cartcheckout.style.display = 'none';
         checkout.style.display = 'none';
         cartValue.textContent = 0;
     } else {
         emptyCartDiv.style.display = 'none';
         checkout.style.display = 'block';
-        let h1 = document.createElement('h1');
+        let h1 = document.createElement('h2');
         h1.textContent = 'Item List';
-        h1.style.padding = '0px 0px 20px 50px';
-        h1.style.borderBottom = '1px solid black';
+        h1.style.backgroundColor = 'lightgray'; 
+        h1.style.borderTopLeftRadius = '5px'; 
+        h1.style.borderTopRightRadius = '5px'; 
+        h1.style.width = '103%'; 
+        h1.style.padding = '5px 0px 15px 30px';
+        h1.style.marginLeft = '-12px';
         cartItemsContainer.appendChild(h1);
         cart.forEach((item) => {
             const itemTotal = item.price * item.quantity;
@@ -74,9 +80,9 @@ function loadCart() {
                     </div>
                     <div class="col-4 text-center">
                         <div class="d-flex justify-content-center align-items-center mb-2">
-                            <button class="btn btn-outline-secondary btn-sm me-2" onclick="changeQuantity(${item.id}, -1)">-</button>
+                            <button class="btn btn-outline-secondary btn-sm me-2 border-0" onclick="changeQuantity(${item.id}, -1)"><i class="fa-solid fa-minus"></i></button>
                             <span class="mx-2">${item.quantity}</span>
-                            <button class="btn btn-outline-secondary btn-sm ms-2" onclick="changeQuantity(${item.id}, 1)">+</button>
+                            <button class="btn btn-outline-secondary btn-sm ms-2 border-0" onclick="changeQuantity(${item.id}, 1)"><i class="fa-solid fa-plus"></i></button>
                         </div>
                         <p class="mb-0 text-muted">${item.quantity} x $${item.price.toFixed(2)}</p>
                     </div>
@@ -86,12 +92,12 @@ function loadCart() {
         const shippingCost = 30;
         const finalTotalPrice = totalPrice + shippingCost;
         checkout.innerHTML = `
-            <div class="container">
+            <div class="container border rounded pb-3">
                 <div class="row mb-3">
-                    <div class="col-12">
-                        <p class="h4"><strong>Order Summary</strong></p>
-                        <hr>
+                    <div class="col-12 bg-dark-gray rounded-top">
+                        <p class="h4 py-2">Order Summary</p>
                     </div>
+                     <hr>
                 </div>
                 <div class="row mb-2">
                     <div class="col-6">
@@ -174,3 +180,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loadCart();
     }
 });
+ document.addEventListener('DOMContentLoaded', () => {
+        const cardItems = document.getElementById('card-items');
+        const cards = cardItems.querySelectorAll('.col');
+        if (cards.length > 0) {
+            const lastCard = cards[cards.length - 1];
+            lastCard.classList.add('d-flex', 'justify-content-center');
+        }
+    });
