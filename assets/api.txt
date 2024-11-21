@@ -1,0 +1,2 @@
+API Docs: https://fakestoreapi.com/
+Products API: https://fakestoreapi.com/products
