@@ -15,7 +15,7 @@ function displayCards(cards) {
             <div class='card-wrapper' style='border:1px solid gray;border-radius:8px'>
                 <img src='${card.image}' width='200px' height='250'class="mb-3 pt-3">
                 <p>${card.title.slice(0, 11)}${card.title.length > 11 ? '...' : ''}</p>
-                <p>${card.description.slice(0,80)}${card.description.length > 80 ? '...' : ''}</p>
+                <p>${card.description.slice(0,80)}${card.description.length > 60 ? '...' : ''}</p>
                 <hr>
                 <p>$${card.price}</p>
                 <hr>
