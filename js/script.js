@@ -11,16 +11,18 @@ function displayCards(cards) {
     div.innerHTML = '';
     cards.forEach(card => {
         div.innerHTML += `
-            <center><div class='cardcenter' style='border:1px solid gray;border-radius:8px'>
+         <center>
+            <div class='card-wrapper' style='border:1px solid gray;border-radius:8px'>
                 <img src='${card.image}' width='200px' height='250'class="mb-3 pt-3">
                 <p>${card.title.slice(0, 11)}${card.title.length > 11 ? '...' : ''}</p>
-                <p>${card.description.slice(0, 100)}${card.description.length > 100 ? '...' : ''}</p>
+                <p>${card.description.slice(0,80)}${card.description.length > 80 ? '...' : ''}</p>
                 <hr>
                 <p>$${card.price}</p>
                 <hr>
                 <button class="btn btn-dark mb-3">Details</button>
                 <button class="btn btn-dark mb-3"onclick="addToCart(${card.id}, '${card.title}', ${card.price}, '${card.image}')">Add to Cart</button>
-            </div></center>`;
+            </div>
+         </center>`;
     });
 }
 function addToCart(id, title, price, image) {
@@ -181,10 +183,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
  document.addEventListener('DOMContentLoaded', () => {
-        const cardItems = document.getElementById('card-items');
-        const cards = cardItems.querySelectorAll('.col');
-        if (cards.length > 0) {
-            const lastCard = cards[cards.length - 1];
-            lastCard.classList.add('d-flex', 'justify-content-center');
-        }
-    });
+     
+});
